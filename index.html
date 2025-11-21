@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>CrazyGames PRO</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: linear-gradient(135deg, #0a0f2b, #1e3c72, #00ffe1);
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* INTRO OVERLAY */
+  .intro-overlay{position:fixed;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.85),rgba(2,6,12,0.9));display:flex;align-items:center;justify-content:center;flex-direction:column;z-index:9999}
+  .intro-card{background:linear-gradient(135deg,#081227,#0f2345);padding:28px;border-radius:16px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.6);border:1px solid rgba(255,255,255,0.03);max-width:520px}
+  .intro-logo{font-size:36px;color:#00ffe1;margin-bottom:8px}
+  .enter-btn{display:inline-block;background:linear-gradient(90deg,#00ffe1,#007bff);color:#001;padding:14px 28px;border-radius:12px;font-weight:800;text-decoration:none;box-shadow:0 10px 30px rgba(0,255,225,0.12);transform:translateY(0);transition:transform .16s ease,box-shadow .16s;cursor:pointer}
+  .enter-btn:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,255,225,0.18)}
+  .enter-sub{margin-top:10px;color:#c9d6e3}
+
+  header {
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(6px);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 20px cyan;
+  }
+  header h1 { font-size: 40px; color:#00ffe1; }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+  }
+  nav a {
+    color: yellow;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid yellow;
+    border-radius: 10px;
+  }
+  nav a:hover { background: yellow; color: black; }
+
+  section { padding: 60px 10%; text-align: center; }
+
+  h2 { font-size: 32px; margin-bottom: 20px; color: #00ffe1; }
+
+  .card {
+    background: #111a3a;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #00ffe1;
+  }
+  .card img, .card video { width: 60%; border-radius: 10px; border: 2px solid #28A745; }
+
+  .boton {
+    margin-top: 15px;
+    background: white;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display:inline-block;
+    font-weight: bold;
+    text-decoration:none;
+  }
+  .boton:hover { background: cyan; }
+
+  footer {
+    margin-top: 40px;
+    padding: 20px;
+    background: rgba(0,0,0,0.5);
+    text-align:center;
+  }
+
+  /* GADGET: efecto de cambio de color al tocar letras */
+  .gadget-text span {
+    display:inline-block;
+    transition:0.2s ease;
+    cursor:pointer;
+  }
+  .gadget-text span:hover {
+    color:#00ffe1;
+    text-shadow:0 0 12px #00ffe1;
+    transform:scale(1.2);
+  }
+
+  /* CAROUSEL */
+  .carousel {
+    position: relative;
+    width: 60%;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #00ffe1;
+  }
+
+  .carousel-image {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+  }
+
+  .carousel button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    border: none;
+    color: #00ffe1;
+    font-size: 36px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+
+  .carousel .prev { left: 10px; }
+  .carousel .next { right: 10px; }
+
+  .carousel button:hover { background: rgba(0,0,0,0.8); }
+
+</style>
+</head>
+<body>
+
+<!-- INTRO BOTÓN -->
+<div id="introOverlay" class="intro-overlay">
+  <div class="intro-card">
+    <div class="intro-logo">🎮 CrazyGames PRO</div>
+    <div style="color:#e6eef6;margin-bottom:14px">Presiona el botón para entrar a la página.</div>
+    <button id="enterSite" class="enter-btn">Entrar</button>
+    <div class="enter-sub">Bienvenido al mundo gamer.</div>
+  </div>
+</div>
+
+<header>
+  <h1 class="gadget-text">CrazyGames PRO Edition</h1>
+  <nav>
+    <a href="#roblox">Roblox</a>
+    <a href="#fortnite">Fortnite</a>
+    <a href="#minecraft">Minecraft</a>
+    <a href="#oncehuman">Once Human</a>
+    <a href="#galeria">Galería</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+<section>
+  <video controls autoplay muted loop>
+      <source src="CrazyGames.mp4" type="video/mp4">
+  </video>
+
+  <h2 class="gadget-text">Bienvenido a CrazyGames</h2>
+  <p>Explora los mejores juegos del momento, aprende cómo descargarlos y disfrútalos sin complicaciones.</p>
+</section>
+
+<!-- ROBLOX -->
+<section id="roblox">
+  <div class="card">
+    <h2>Roblox</h2>
+    <img src="Roblox.png" alt="Roblox Imagen">
+    <p>Uno de los juegos más populares del mundo. Aprende cómo descargarlo, instalarlo y jugarlo fácilmente.</p>
+    <video controls>
+      <source src="Roblox.mp4" type="video/mp4">
+    </video>
+    <a class="boton" target="_blank" href="https://www.roblox.com/">Visitar Roblox</a>
+  </div>
+</section>
+
+<!-- FORTNITE -->
+<section id="fortnite">
+  <div class="card">
+    <h2>Fortnite</h2>
+    <img src="Fornite3.jpg" alt="Fortnite Imagen">
+    <p>Aprende cómo instalar Fortnite y comenzar tus partidas al instante. Todo explicado fácil.</p>
+    <video controls>
+      <source src="Fornite.mp4" type="video/mp4">
+    </video>
+    <a class="boton" target="_blank" href="https://www.epicgames.com/site/es-ES/home">Visitar EpicGames</a>
+  </div>
+</section>
+
+<!-- MINECRAFT -->
+<section id="minecraft">
+  <div class="card">
+    <h2>Minecraft</h2>
+    <img src="Minecraft.png" alt="Minecraft Imagen">
+    <p>Descubre cómo descargar Minecraft, crear mundos y vivir aventuras infinitas.</p>
+    <video controls>
+      <source src="Minecraft.mp4" type="video/mp4">
+    </video>
+    <a class="boton" target="_blank" href="https://tlauncher.org/">Visitar TLauncher</a>
+  </div>
+</section>
+
+<!-- ONCE HUMAN -->
+<section id="oncehuman">
+  <div class="card">
+    <h2>Once Human</h2>
+    <img src="OnceHuman.jpg" alt="Once Human Imagen">
+    <p>Un juego lleno de anomalías y misterios. Si te gustan los mundos raros, este es para ti.</p>
+    <video controls>
+      <source src="OnceHuman2.mp4" type="video/mp4">
+    </video>
+    <a class="boton" target="_blank" href="https://www.oncehuman.game/">Visitar Once Human</a>
+  </div>
+</section>
+
+<!-- GALERÍA CARRUSEL -->
+<section id="galeria">
+  <h2>Galería de Imágenes</h2>
+  <div class="carousel">
+    <button class="prev">&#10094;</button>
+    <img src="Roblox.png" alt="Galería Imagen" class="carousel-image">
+    <button class="next">&#10095;</button>
+  </div>
+</section>
+
+<!-- CONTACTO PARA RECOMENDAR JUEGOS -->
+<section id="contacto-juegos">
+  <h2>Contacto para Recomendar Juegos</h2>
+  <div class="card">
+    <ul style="list-style:none; padding:0; font-size:18px; line-height:30px;">
+      <li><strong>📞 Teléfono:</strong> (849-865-XXXX)</li>
+      <li><strong>💼 Disponible para proyectos:</strong> No</li>
+      <li><strong>💰 Negocios / Dinero:</strong> Contactar mediante formulario</li>
+    </ul>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <h2>Contacto</h2>
+  <div class="card">
+    <form>
+      <input type="text" placeholder="Tu nombre" required style="width:90%; padding:10px; margin:10px; border-radius:10px; border:none;">
+      <input type="email" placeholder="Tu correo" required style="width:90%; padding:10px; margin:10px; border-radius:10px; border:none;">
+      <textarea placeholder="Tu mensaje" required style="width:90%; height:120px; padding:10px; margin:10px; border-radius:10px; border:none;"></textarea>
+      <button class="boton" type="submit">Enviar</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p>Gracias por visitar CrazyGames PRO © 2025</p>
+</footer>
+
+<script>
+  // INTRO OVERLAY
+  const overlay = document.getElementById('introOverlay');
+  const btn = document.getElementById('enterSite');
+
+  btn.addEventListener('click', () => {
+    overlay.style.display = 'none';
+  });
+
+  // CAROUSEL
+  const images = ["Roblox.png", "Fornite3.jpg", "Minecraft.png", "OnceHuman.jpg"];
+  let currentIndex = 0;
+
+  const carouselImage = document.querySelector(".carousel-image");
+  const prevBtn = document.querySelector(".prev");
+  const nextBtn = document.querySelector(".next");
+
+  function showImage(index) {
+    carouselImage.src = images[index];
+  }
+
+  prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
+  });
+
+  nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+  });
+
+  // Inicializar
+  showImage(currentIndex);
+</script>
+
+</body>
+</html>
+
